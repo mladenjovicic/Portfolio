@@ -8,9 +8,12 @@ import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 
 class LocalRepository(private val databaseService: DatabaseService)  {
-    var collectionLiveDBModel: LiveData<List<CollectionDBModel>>? = null
+    var collectionListLiveDBModel: LiveData<List<CollectionDBModel>>? = null
     var treeLiveDBModel: LiveData<List<TreeDBModel>>? = null
     var subCollectionLiveDBModel:LiveData<List<SubCollectionTreeDBModel>>?=null
+
+    var collectionLiveDBModel: LiveData<CollectionDBModel>? = null
+
 
 
     fun insertLocalDataCollection(
@@ -21,9 +24,20 @@ class LocalRepository(private val databaseService: DatabaseService)  {
     }
 
     fun getListCollection(): LiveData<List<CollectionDBModel>>? {
-        collectionLiveDBModel = databaseService.collectionDAO.getListCollection()
+        collectionListLiveDBModel = databaseService.collectionDAO.getListCollection()
+        return collectionListLiveDBModel
+    }
+
+    fun getVasaDetailes(vaseId:String):LiveData<CollectionDBModel>? {
+        collectionLiveDBModel = databaseService.collectionDAO.getVasaDetailes(vaseId)
         return collectionLiveDBModel
     }
+
+    fun updateVasaID(name:String,descritpion:String, serverId:String){
+
+        databaseService.collectionDAO.updateVasaID(name, descritpion, serverId)
+    }
+
 
     fun getSubCollectionLocalData():LiveData<List<SubCollectionTreeDBModel>>?{
         subCollectionLiveDBModel = databaseService.treeDAO.getListSubColllection()

@@ -41,7 +41,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/editTextSearchVasa"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -50,7 +50,7 @@
             android:inputType="textPersonName" />
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/imageButtonSearch"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="5"

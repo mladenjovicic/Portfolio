@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_show_vasa"
+        android:title="SHOW"/>
+    <item
+        android:id="@+id/nav_edit_vasa"
+        android:title="EDIT"/>
+</menu>

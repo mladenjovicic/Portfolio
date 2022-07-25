@@ -33,11 +33,11 @@ class VaseAdapter: RecyclerView.Adapter<VaseAdapter.MyViewHolder>() {
         holder.itemView.setOnClickListener {
             if(holder.rowVase != null){
                 val intent = Intent(holder.rowVase.context, VaseActivity::class.java)
-                intent.putExtra("vasename", vaseList!![position].name)
+                intent.putExtra("vaseId", vaseList!![position].serverId)
                 holder.rowVase.context.startActivity(intent)
             }else{
                 val intent = Intent(holder.textViewRowVase?.context, VaseActivity::class.java)
-                intent.putExtra("vasename", vaseList!![position].name)
+                intent.putExtra("vaseId", vaseList!![position].serverId)
                 holder.textViewRowVase?.context!!.startActivity(intent)
             }
         }
